@@ -92,30 +92,4 @@ Components of taskgen
 * [**Sessions**](docs/session.md) contain the low level implementations for
   sending task-sets, optimization classes and for receiving events.  
   
-![Overview of all components](design_overview.png "Overview of all components.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Documentation
-* [Overview](docs/overview.md)
-* [Command line](docs/commandline.md)
-* [Distributors](docs/distributor.md)
-* [Task-Sets](docs/taskset.md)
-* [Tasks](docs/tasks.md)
-* [Task Blocks](docs/blocks.md)
-* [Admission Control](docs/admctrl.md)
-* [Monitors](docs/monitor.md)
-* [Sessions](docs/session.md)
-* [Dictionary to XML format](docs/dict2xml.md)
-* [Qemu Startup Script](docs/qemu.md)
+![Overview of all components](docs/design_overview.png "Overview of all components.")
