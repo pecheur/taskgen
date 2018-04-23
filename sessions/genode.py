@@ -312,9 +312,9 @@ class QemuSession(PingSession):
             self._kill_qemu()
             raise e
 
-    def event(self):
+    def run(self):
         try:
-            return PingSession.event(self)
+            return PingSession.run(self)
         except socket.timeout as e:
             self._kill_qemu()
             raise e
