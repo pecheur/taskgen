@@ -31,6 +31,9 @@ possible to define ranges `range(0,10)`, lists `[0,1,2,3]` or custom
 might have multiple variants of a value. Multiple options for an attribute results in
 multiple variants of a task and finally multiple variants of a taskset. 
 
+![variants of a task](task_variants.png "Variants of a task")
+
+
 For example, if you want to analyse, how a scheduler reacts to different values
 of a specific attribute, you will define its value as an `Iterable` and generate all
 task-set variants. Each generated task-set differs from one another in this
@@ -65,10 +68,6 @@ for variant in taskset.variants():
 ## Attributes
 
 Following attributes are part of every task. 
-
-**Pay attention: not every time related attribute use the similar units. They
-differ in milliseconds, seconds, usw. This will change soon. 
-[Issue](https://github.com/pecheur/toolchain-host/issues/2)**
 
 ### General
 

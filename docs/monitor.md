@@ -13,15 +13,19 @@ events. Following events are supported:
 
 Following monitor classes exist:
 
+![class hierarchy](monitors.png "Class Hierarchy of Monitors")
+
+
 | Monitor Class | Description |
 | --- | --- |
-| `monitor.AbstractMonitor` | This might be the starting point for your own monitor. |
-| `monitor.stdio.StdioMonitor` | Simple debugging monitor, which prints information to stdout. |
-| `monitor.mongodb.MongoMonitor` | Stores description and job data to a mongo database |
+| `monitors.AbstractMonitor` | This might be the starting point for your own monitor. |
+| `monitors.stdio.StdioMonitor` | Simple debugging monitor, which prints information to stdout. |
+| `monitors.mongo.MongoMonitor` | Stores description and job data to a mongo database |
+
 
 ```python
 from taskgen.distributor import Distributor
-from taskgen.monitor.mongodb import MongoMonitor
+from taskgen.monitors.mongo import MongoMonitor
 
 distributor = Distributor("172.25.1.2")
 
@@ -41,3 +45,5 @@ which has serveral advantages in our use case. The integration with
 the task-set is seemless due to the fact that the type `dict`, which is the
 subtype of tasks and task-sets, is used by mongodb. So there is no need for a
 translation layer or an additional Qeury-Language.
+
+![RoboMongo GUI](robomongo.png "RoboMongo: GUI for viewing mongodb documents.")

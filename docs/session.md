@@ -3,13 +3,16 @@
 The low level communication between the `Distributor` and a target system is
 done by a Session class.
 
+![class hierarchy](sessions.png "Class Hierarchy of Sessions")
+
+
 | Session Class | Description |
 | --- | --- |
 | `session.AbstractSession` | Abstract class for a session. Use this for implementing new sessions |
 | `sessions.genode.GenodeSession` | Basic communication with `genode-Taskloader`. |
-| `sessions.genode.QemuSession` | Kills a local qemu session, if there is a network timeout. For more information read [Qemu.md](docs/qemu.md) |
+| `sessions.genode.QemuSession` | Kills a local qemu session, if there is a network timeout. For more information read [Qemu.md](qemu.md) |
 | `sessions.genode.PingSession` | Extends the `GenodeSession` by a ping check before a connection is established |
-| `sessions.stdio.StdIOSession` | Prints task-sets to stdout instead of sending it **DEBUGGING** |
+| `sessions.stdio.StdIOSession` | Prints task-sets to stdout instead of sending it |
 | `sessions.simso.SimSoSession` | Runs the task-set in a local simulation. Makes use of the SimSo Simulation Framework |
 
 ## SimSoSession
@@ -32,7 +35,7 @@ Sometimes a genonde instanse freezes and does not respond to connection
 establishments. The only way to solve this problem is killing the qemu instance
 and restarting the operating system. The `qemu-up.sh` script and
 `taskgen.sessions.geenode.QemuSession` are a solution to automatically do this
-job. [Further reading](docs/qemu.md)
+job. [Further reading](qemu.md)
 
 
 ## Implementation

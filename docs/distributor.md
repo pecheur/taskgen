@@ -4,7 +4,7 @@ Distributor
 The `Distributor` class glues everything together in place. It scans IP ranges
 for available sessions, automatically manages open connections to sessions,
 distributes task-sets and task-set variants to connected target systems and pass
-on incoming events to event handlers.  
+on incoming events to monitors.  
 
 Is is possible to hand over a list of IP ranges. Each IP range is described with
 the [CIDR](https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing) format.  
@@ -31,7 +31,7 @@ Extended Example
 ```Python
 from taskgen.tasksets.hey import Hey1TaskSet
 from taskgen.distributor import Distributor
-from taskgen.events.csv import CsvHandler
+from taskgen.monitors.mongo import MongoMonitor
 
 
 # define admission control data
@@ -52,9 +52,9 @@ ADMISSION_CTRL_DATA = {
 # attempt connecting to hosts of two ip ranges.
 distributor = Distributor(["172.25.1.0/24", 172.49.1.0/24])
 
-# save all events to `events.csv`
-event_handler = CsvHandler("events.csv")
-distributor.event_handler = event_handler
+# store all task events to the mongo database.
+monitor= MongoMonitor()
+distributor.monitor = monitor
 
 # create taskset
 taskset = Hey1TaskSet()

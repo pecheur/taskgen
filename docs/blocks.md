@@ -114,7 +114,7 @@ from taskset import BlockTaskSet
 taskset = BlockTaskSet(
     hey.HelloWorld,
     period.Random,
-    [priority.Custom(10), priority.Custom(24), priority.Custom(44), priority.Custom(100)]
+    [priority.Value(10), priority.Value(24), priority.Value(44), priority.Value(100)]
 )
 ```
 
