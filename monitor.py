@@ -13,7 +13,7 @@ class AbstractMonitor(metaclass=ABCMeta):
     """Abstract monitor class."""
 
     @abstractmethod
-    def __taskset_event__(self, taskset, event):
+    def __taskset_event__(self, taskset):
         """Called, whenever a job of the taskset is updated."""
         pass
 
